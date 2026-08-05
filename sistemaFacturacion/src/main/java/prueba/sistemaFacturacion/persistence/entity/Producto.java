@@ -29,7 +29,7 @@ public class Producto {
     private String descripcion;
 
     @Column(name = "precio_unitario", nullable = false)
-    private String precioUnitario;
+    private Double precioUnitario;
 
 
     @Column(nullable = false)
