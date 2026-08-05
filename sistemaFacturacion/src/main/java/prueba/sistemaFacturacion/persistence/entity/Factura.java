@@ -1,4 +1,4 @@
-package prueba.sistemaFacturacion.persistence.enttity;
+package prueba.sistemaFacturacion.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
