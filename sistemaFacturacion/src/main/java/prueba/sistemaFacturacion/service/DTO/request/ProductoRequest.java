@@ -1,6 +1,11 @@
 package prueba.sistemaFacturacion.service.DTO.request;
 
 import jakarta.validation.constraints.*;
+import lombok.*;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class ProductoRequest {
 
@@ -8,19 +13,19 @@ public class ProductoRequest {
     @Size(max = 100)
     private String nombre;
 
+    @NotNull
+    @Min(0)
+    private Double precioUnitario;
+
     @NotBlank
-    @Size(max = 100)
+    @Size(max = 255)    
     private String descripcion;
 
     @NotNull
-    @DecimalMin(value = "0.0", inclusive = false)
-    private Double precioUnitario;
+    private Boolean activo;
 
     @NotNull
-    @Min(value = 0)
+    @Min(0)
     private Integer stock;
-
-    @NotNull
-    private boolean activo;
 
 }

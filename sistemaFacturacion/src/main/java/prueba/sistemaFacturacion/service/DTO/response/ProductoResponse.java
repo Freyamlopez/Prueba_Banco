@@ -1,15 +1,17 @@
-package prueba.sistemaFacturacion.service.DTO.response;
+package prueba.sistemaFacturacion.service.DTO.response; 
 
 import lombok.*;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductoResponse {
 
     private Long id;
     private String nombre;
-    private String descripcion;
     private Double precioUnitario;
+    private String descripcion;
+    private Boolean activo;
     private Integer stock;
-    private boolean activo;
 
 }
