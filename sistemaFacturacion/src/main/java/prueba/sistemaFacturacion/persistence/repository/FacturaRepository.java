@@ -3,8 +3,8 @@ package prueba.sistemaFacturacion.persistence.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import prueba.sistemaFacturacion.persistence.enttity.EstadoFactura;
-import prueba.sistemaFacturacion.persistence.enttity.Factura;
+import prueba.sistemaFacturacion.persistence.entity.EstadoFactura;
+import prueba.sistemaFacturacion.persistence.entity.Factura;
 
 import java.util.List;
 import java.util.Optional;
