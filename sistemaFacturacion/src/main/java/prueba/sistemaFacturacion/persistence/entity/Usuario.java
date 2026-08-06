@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 @Data
 public class Usuario {
     
@@ -12,15 +12,17 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre")
+    @Column(name = "nombre", nullable = false)
     private String nombre;
 
-    @Column(name = "email", unique = true)
+    @Column(name = "email",  nullable = false, unique = true)
     private String email;
 
-    @Column(name = "contrasena")
+    @Column(name = "contrasena",  nullable = false)
     private String contrasena;
 
-    @Column(name = "rol")
-    private String rol;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "rol_id", nullable = false)
+    private Rol rol;
+
 }
