@@ -6,11 +6,14 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClienteRequest {
 
-    @NotBlank(message = "El nombre es obligatorio.")
+    @NotBlank(message = "El usuario es obligatorio.")
     @Size(max = 100)
-    private String nombre;
+    private String usuario;
 
     @NotBlank(message = "La identificación es obligatoria.")
     @Length(min = 10, max = 10, message = "La identificación debe tener exactamente 10 dígitos.")

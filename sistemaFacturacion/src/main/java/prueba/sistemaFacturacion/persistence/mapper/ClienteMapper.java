@@ -4,24 +4,28 @@ import org.springframework.stereotype.Component;
 import prueba.sistemaFacturacion.persistence.entity.Cliente;
 import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
 
+
 @Component
 public class ClienteMapper {
 
-    Cliente cliente = new Cliente();
-
     public Cliente toCliente(ClienteRequest clienteRequest) {
+
         if (clienteRequest == null) {
             return null;
         }
 
         Cliente cliente = new Cliente();
-        cliente.setId(cliente.getId());
-        cliente.setUsuario(cliente.getUsuario());
-        cliente.setIdentificacion(cliente.getIdentificacion());
-        cliente.setTelefono(cliente.getTelefono());
-        cliente.setDireccion(cliente.getDireccion());
+
+        cliente.setIdentificacion(clienteRequest.getIdentificacion());
+        cliente.setTelefono(clienteRequest.getTelefono());
+        cliente.setDireccion(clienteRequest.getDireccion());
+
+        // El usuario es opcional según el documento.
+        // Por ahora no lo asignamos.
 
         return cliente;
     }
 
 }
+
+

@@ -5,6 +5,7 @@ import prueba.sistemaFacturacion.persistence.entity.Cliente;
 import prueba.sistemaFacturacion.persistence.mapper.ClienteMapper;
 import prueba.sistemaFacturacion.persistence.repository.ClienteRepository;
 import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
+import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
 
 @Service
 public class ClienteService {
@@ -16,9 +17,10 @@ public class ClienteService {
         this.clienteRepository = clienteRepository;
         this.clienteMapper = clienteMapper;
     }
-    
-    public Cliente saveClient (ClienteRequest cliente){
-        return this.clienteRepository.save(clienteMapper.toCliente(cliente));
+
+    public Cliente saveClient (ClienteRequest dto){
+        Cliente cliente = clienteMapper.toCliente(dto);
+        return clienteRepository.save(cliente);
     }
 
     public Cliente getAllClientByIdentificacion(String identificacion){
