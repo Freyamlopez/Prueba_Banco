@@ -1,7 +1,14 @@
 package prueba.sistemaFacturacion.service.DTO.request;
 
 import jakarta.validation.constraints.*;
+import lombok.*;
 
+@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ClienteRequest {
 
     @NotBlank

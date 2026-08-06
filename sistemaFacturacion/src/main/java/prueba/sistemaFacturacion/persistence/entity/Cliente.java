@@ -3,9 +3,12 @@ package prueba.sistemaFacturacion.persistence.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Builder
 @Entity
 @Table(name = "clientes")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class Cliente {
     
