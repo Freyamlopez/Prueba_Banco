@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51e7b1c6-b6fc-41b2-8ebe-b88f44ab13f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/mapper/ClienteMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/mapper/ProductoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/entity/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/entity/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/entity/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/entity/Usuario.java" afterDir="false" />
@@ -13,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/request/UsuarioRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/request/UsuarioRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/UsuarioResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/UsuarioResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/FacturaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/FacturaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/UsuarioDetalleService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/UsuarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/ClienteController.java" afterDir="false" />
