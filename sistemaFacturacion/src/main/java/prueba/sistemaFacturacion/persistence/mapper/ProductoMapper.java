@@ -2,35 +2,24 @@ package prueba.sistemaFacturacion.persistence.mapper;
 
 import org.springframework.stereotype.Component;
 import prueba.sistemaFacturacion.persistence.entity.Producto;
+import prueba.sistemaFacturacion.service.DTO.request.ProductoRequest;
 
 @Component
 public class ProductoMapper {
+    Producto producto = new Producto();
 
-    public Producto toEntity(Producto producto) {
-        if (producto == null) {
+    public Producto toProducto(ProductoRequest productoRequest) {
+        if (productoRequest == null) {
             return null;
         }
 
-        Producto entity = new Producto();
-        entity.setId(producto.getId());
-        entity.setNombre(producto.getNombre());
-        entity.setPrecioUnitario(producto.getPrecioUnitario());
-        entity.setStock(producto.getStock());
+            Producto producto = new Producto();
+            producto.setNombre(productoRequest.getNombre());
+            producto.setDescripcion(productoRequest.getDescripcion());
+            producto.setPrecioUnitario(productoRequest.getPrecioUnitario());
+            producto.setStock(productoRequest.getStock());
+            producto.setActivo(productoRequest.getActivo());
 
-        return entity;
-    }
-
-    public Producto toDto(Producto entity) {
-        if (entity == null) {
-            return null;
+            return producto;
         }
-
-        Producto dto = new Producto();
-        dto.setId(entity.getId());
-        dto.setNombre(entity.getNombre());
-        dto.setPrecioUnitario(entity.getPrecioUnitario());
-        dto.setStock(entity.getStock());
-
-        return dto;
-    }
 }

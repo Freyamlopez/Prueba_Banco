@@ -2,7 +2,9 @@ package prueba.sistemaFacturacion.service;
 
 import org.springframework.stereotype.Service;
 import prueba.sistemaFacturacion.persistence.entity.Producto;
+import prueba.sistemaFacturacion.persistence.mapper.ProductoMapper;
 import prueba.sistemaFacturacion.persistence.repository.ProductoRepository;
+import prueba.sistemaFacturacion.service.DTO.request.ProductoRequest;
 
 import java.util.List;
 
@@ -10,10 +12,12 @@ import java.util.List;
 public class ProductoService {
 
     private final ProductoRepository productoRepository;
+    private final ProductoMapper productoMapper;
 
 
-    public ProductoService(ProductoRepository productoRepository) {
+    public ProductoService(ProductoRepository productoRepository, ProductoMapper productoMapper) {
         this.productoRepository = productoRepository;
+        this.productoMapper = productoMapper;
     }
 
 
@@ -22,8 +26,10 @@ public class ProductoService {
     }
 
 
-    public Producto saveProduct (Producto producto){
-        return this.productoRepository.save(producto);
+
+    public Producto saveProduct(ProductoRequest dto) {
+        Producto producto = productoMapper.toProducto(dto);
+        return productoRepository.save(producto);
     }
 
 }
