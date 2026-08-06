@@ -1,10 +1,12 @@
 package prueba.sistemaFacturacion.web.controller;
 
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import prueba.sistemaFacturacion.persistence.entity.Producto;
+import prueba.sistemaFacturacion.service.DTO.request.ProductoRequest;
 import prueba.sistemaFacturacion.service.ProductoService;
 
 import java.util.List;
@@ -28,7 +30,8 @@ public class ProductoController {
 
 
     @PostMapping
-    public ResponseEntity<Producto> saveProduct (@RequestBody Producto producto){
-        return ResponseEntity.status(HttpStatus.CREATED).body(productoService.saveProduct(producto));
+    public ResponseEntity<Producto> saveProduct (@Valid @RequestBody ProductoRequest dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(productoService.saveProduct(dto));
     }
+
 }
