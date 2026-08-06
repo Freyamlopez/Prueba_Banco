@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "clientes")
+@Table(name = "cliente")
 @Data
 
 public class Cliente {
@@ -13,11 +13,11 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id", nullable = true)
     private Usuario usuario;
 
-    @Column(name = "identificacion",unique = true)
+    @Column(name = "identificacion", unique = true, nullable = false)
     private String identificacion;
 
     @Column(name = "telefono")
