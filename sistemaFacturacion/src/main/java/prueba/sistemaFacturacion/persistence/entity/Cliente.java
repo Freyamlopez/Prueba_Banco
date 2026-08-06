@@ -13,13 +13,11 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "usuario_id")
     @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-    @Column(name = "identificacion")
-    @Column(unique = true)
+    @Column(name = "identificacion",unique = true)
     private String identificacion;
 
     @Column(name = "telefono")
