@@ -1,23 +1,25 @@
 package prueba.sistemaFacturacion.service.DTO.request;
 
 import jakarta.validation.constraints.*;
+import lombok.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClienteRequest {
 
     @NotBlank(message = "El nombre es obligatorio.")
     @Size(max = 100)
     private String nombre;
 
-    @NotBlank(message = "El rol es obligatorio.")
-    @Size(max = 100)
-    private String rol;
-
     @NotBlank(message = "La identificación es obligatoria.")
-    @Size(max = 20)     
+    @Length(min = 10, max = 10, message = "La identificación debe tener exactamente 10 dígitos.")
+    @Pattern(regexp = "\\d+", message = "La identificación debe contener solo números.")
     private String identificacion;
 
     @NotBlank(message = "El teléfono es obligatorio.")
-    @Size(max = 10)
+    @Length(min = 10, max = 10, message = "El teléfono debe tener exactamente 10 dígitos.")
+    @Pattern(regexp = "\\d+", message = "El teléfono debe contener solo números.")
     private String telefono;
     
     @NotBlank(message = "La dirección es obligatoria.")
