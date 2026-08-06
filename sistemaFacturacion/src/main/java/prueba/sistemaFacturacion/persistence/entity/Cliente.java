@@ -14,7 +14,7 @@ public class Cliente {
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_nombre", nullable = true, optional = true)
+    @JoinColumn(name = "usuario_nombre", nullable = true)
     private Usuario usuario;
 
     @Column(name = "identificacion", unique = true, nullable = false, length = 10, updatable = false)

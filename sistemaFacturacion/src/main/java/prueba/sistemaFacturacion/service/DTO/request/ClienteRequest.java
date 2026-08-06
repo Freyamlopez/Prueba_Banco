@@ -2,13 +2,12 @@ package prueba.sistemaFacturacion.service.DTO.request;
 
 import jakarta.validation.constraints.*;
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class ClienteRequest {
 
     @NotBlank(message = "El usuario es obligatorio.")
