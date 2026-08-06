@@ -5,7 +5,7 @@ import lombok.*;
 
 @Builder
 @Entity
-@Table(name = "clientes")
+@Table(name = "cliente")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,11 +16,11 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "usuario_id", unique = true)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id", nullable = true)
     private Usuario usuario;
 
-    @Column(name = "identificacion",unique = true)
+    @Column(name = "identificacion", unique = true, nullable = false)
     private String identificacion;
 
     @Column(name = "telefono")

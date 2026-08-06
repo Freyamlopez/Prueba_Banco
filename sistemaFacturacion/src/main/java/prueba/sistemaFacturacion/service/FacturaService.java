@@ -39,7 +39,7 @@ public class FacturaService   {
     @Transactional
     public FacturaResponseDTO crearFactura(FacturaRequestDTO request, String emailCajero) {
 
-        Usuario cajero = usuarioRepository.findByEmail(emailCajero)
+        Usuario cajero = usuarioRepository.findByCorreo(emailCajero)
                 .orElseThrow(() -> new ResourceNotFoundException("Cajero no encontrado"));
 
         Cliente cliente = clienteRepository.findById(request.clienteId())
