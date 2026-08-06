@@ -18,9 +18,10 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<Cliente>> getAll() {
-        return ResponseEntity.ok(clienteService.getAll());
+    @GetMapping("/{id}")
+    public ResponseEntity<Cliente> getClientById(@PathVariable Long id) {
+        Cliente cliente = clienteService.getAllClientById(id);
+        return cliente != null ? ResponseEntity.ok(cliente) : ResponseEntity.notFound().build();
     }
 
     @PostMapping

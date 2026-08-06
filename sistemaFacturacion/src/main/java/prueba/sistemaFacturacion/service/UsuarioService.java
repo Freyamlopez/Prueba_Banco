@@ -1,21 +1,28 @@
 package prueba.sistemaFacturacion.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import prueba.sistemaFacturacion.persistence.entity.Usuario;
 import prueba.sistemaFacturacion.persistence.repository.UsuarioRepository;
 
 @Service
-public class UsuarioService implements UsuarioDetalleService {
+public class UsuarioService{
 
     private final UsuarioRepository usuarioRepository;
-
+    
     @Autowired
     public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
+    
+    public Usuario findByCorreo(String correo) {
+        return usuarioRepository.findByCorreo(correo)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+    }
 
-    @Override
+    /*@Override
     public UserDetails loadUserByUsername(String correo) {
         Usuario usuario = usuarioRepository.findByCorreo(correo)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
@@ -25,5 +32,5 @@ public class UsuarioService implements UsuarioDetalleService {
                 .password(usuario.getPassword())
                 .authorities(new SimpleGrantedAuthority("ROLE_" + usuario.getRol().getNombre()))
                 .build();
-    }
+    }*/
 }

@@ -17,5 +17,8 @@ public class ClienteService {
         return this.clienteRepository.save(cliente);
     }
 
+    public Cliente getAllClientById(Long id){
+        return this.clienteRepository.findById(id).orElse(null);
+    }
     
 }
