@@ -16,8 +16,8 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @OneToOne
+    @JoinColumn(name = "usuario_id", unique = true)
     private Usuario usuario;
 
     @Column(name = "identificacion",unique = true)
@@ -28,5 +28,4 @@ public class Cliente {
 
     @Column(name = "direccion")
     private String direccion;
-
 }
