@@ -87,6 +87,10 @@ export default function Sidebar() {
             <div className="border-t border-blue-800 p-5">
                 <button
                     className="flex items-center gap-3 hover:text-red-300 transition"
+                    onClick={() => {
+                        localStorage.removeItem("token");
+                        window.location.href = "/login";
+                    }}
                 >
                     <FaSignOutAlt size={20} />
                     <span className="text-lg">

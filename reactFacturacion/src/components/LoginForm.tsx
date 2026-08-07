@@ -19,7 +19,6 @@ export default function LoginForm({ correo, password, onCorreoChange, onPassword
     return (
 
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-5xl grid md:grid-cols-2">
-
             <div className="hidden md:flex flex-col items-center justify-center  to-blue-50 text-mauve-800 p-10">
 
                 <img  
@@ -31,12 +30,6 @@ export default function LoginForm({ correo, password, onCorreoChange, onPassword
                 <h1 className="text-5xl font-bold mt-8 text-center">
                     Sistema de Facturación
                 </h1>
-
-                  {/*
-                <p className="mt-5 text-center text-blue-100">
-                    Plataforma para la gestión de clientes,
-                    productos y facturas.
-                </p>*/}
 
             </div>
 
