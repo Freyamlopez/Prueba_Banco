@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import { login } from "../api/login";
 import { toast } from "react-toastify";
@@ -7,6 +8,7 @@ export default function LoginPage() {
 
     const [correo, setCorreo] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -17,7 +19,7 @@ export default function LoginPage() {
             console.log(token);
 
             toast.success("¡Inicio de sesión exitoso!");
-            // navigate("/dashboard");
+            navigate("/dashboard");
         } catch (error) {
 
             toast.error("Correo o contraseña incorrectos.");
@@ -25,7 +27,7 @@ export default function LoginPage() {
     };
 
 
-    
+
     return (
 
         <div className="min-h-screen bg-slate-100 flex items-center justify-center">

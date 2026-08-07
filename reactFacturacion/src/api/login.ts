@@ -6,7 +6,6 @@ const URL = "http://localhost:8080/auth/login";
 export async function login(correo: string, password: string) {
 
     const response = await fetch(URL, {
-
         method: "POST",
 
         headers: {
@@ -18,8 +17,8 @@ export async function login(correo: string, password: string) {
             password
         })
 
-    });
-    
+    } );
+
     if (!response.ok) {
         throw new Error("Correo o contraseña incorrectos");
     }
