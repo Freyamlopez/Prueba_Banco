@@ -2,7 +2,9 @@ package prueba.sistemaFacturacion.persistence.mapper;
 
 import org.springframework.stereotype.Component;
 import prueba.sistemaFacturacion.persistence.entity.Cliente;
+
 import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
+import prueba.sistemaFacturacion.service.DTO.response.ClienteResponse;
 
 
 @Component
@@ -19,13 +21,9 @@ public class ClienteMapper {
         cliente.setIdentificacion(clienteRequest.getIdentificacion());
         cliente.setTelefono(clienteRequest.getTelefono());
         cliente.setDireccion(clienteRequest.getDireccion());
-
         // El usuario es opcional según el documento.
         // Por ahora no lo asignamos.
-
         return cliente;
     }
 
 }
-
-

@@ -1,5 +1,7 @@
 package prueba.sistemaFacturacion.web.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -21,7 +23,9 @@ public class FacturaController {
     private final FacturaService facturaService;
 
     @PostMapping
+    @Operation(summary = "Crear Factura")
     @PreAuthorize("hasRole('CAJERO')")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa")
     public ResponseEntity<FacturaResponseDTO> crearFactura(
             @Valid @RequestBody FacturaRequestDTO request,
             Authentication authentication) {
@@ -33,8 +37,11 @@ public class FacturaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @Operation(summary = "Obtener facturas por cliente")
     @GetMapping("/cliente/{idCliente}")
     @PreAuthorize("hasAnyRole('ADMIN', 'CAJERO', 'CLIENTE')")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa")
+    @ApiResponse(responseCode = "404", description = "No se encontraron registros del usuario")
     // cuando implementemos JWT/UserDetailsService, agregar validación de que
     // si el rol es CLIENTE, idCliente debe corresponder al usuario autenticado.
     // Ejemplo futuro: "hasAnyRole('ADMIN','CAJERO') or (hasRole('CLIENTE') and #idCliente == authentication.principal.clienteId)"
@@ -46,8 +53,11 @@ public class FacturaController {
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Obtener facturas por Cajero")
     @GetMapping("/cajero/{idCajero}")
     @PreAuthorize("hasAnyRole('ADMIN', 'CAJERO')")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa")
+    @ApiResponse(responseCode = "404", description = "No se encontraron registros del usuario")
     // si el rol es CAJERO, validar que idCajero == id del cajero autenticado.
     public ResponseEntity<Page<FacturaResponseDTO>> obtenerPorCajero(
             @PathVariable Long idCajero,
@@ -57,15 +67,20 @@ public class FacturaController {
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Anolar facturas por id")
     @PutMapping("/{id}/anular")
     @PreAuthorize("hasRole('ADMIN')")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa")
+    @ApiResponse(responseCode = "404", description = "No se encontraron registros")
     public ResponseEntity<FacturaResponseDTO> anularFactura(@PathVariable Long id) {
         FacturaResponseDTO response = facturaService.anularFactura(id);
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Registrar pago")
     @PutMapping("/{id}/pagar")
     @PreAuthorize("hasRole('CAJERO')")
+    @ApiResponse(responseCode = "200", description = "Operación exitosa")
     public ResponseEntity<FacturaResponseDTO> registrarPago(@PathVariable Long id) {
         FacturaResponseDTO response = facturaService.registrarPago(id);
         return ResponseEntity.ok(response);

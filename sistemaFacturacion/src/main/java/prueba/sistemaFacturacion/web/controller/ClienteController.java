@@ -21,8 +21,8 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> getClientById(@PathVariable String identificacion) {
-        Cliente cliente = clienteService.getAllClientByIdentificacion(identificacion);
+    public ResponseEntity<Cliente> getClientById(@PathVariable String id) {
+        Cliente cliente = clienteService.getAllClientByIdentificacion(id);
         return cliente != null ? ResponseEntity.ok(cliente) : ResponseEntity.notFound().build();
     }
 

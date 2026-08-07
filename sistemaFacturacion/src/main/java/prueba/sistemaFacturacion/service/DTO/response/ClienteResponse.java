@@ -3,6 +3,11 @@ package prueba.sistemaFacturacion.service.DTO.response;
 import lombok.*;
 
 @Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ClienteResponse {
     
     private Long id;

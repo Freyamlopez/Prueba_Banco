@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51e7b1c6-b6fc-41b2-8ebe-b88f44ab13f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/mapper/ClienteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/mapper/ClienteMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/request/ClienteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/request/ClienteRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/AuthResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/OpenApiConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/excepcion/RecursoDuplicadoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/request/UsuarioRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/request/UsuarioRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/LoginDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/RegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/RegisterDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/UsuarioResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/response/UsuarioResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/UserSecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/UserSecurityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/excepcion/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/excepcion/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +32,29 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sistemaFacturacion" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -42,11 +74,13 @@
   &quot;keyToString&quot;: {
     &quot;Gradle.Build sistemaFacturacion.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;Spring Boot.SistemaFacturacionApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.prueba4.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Rania&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;WilberAlvarez&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/rostaiza/Downloads/sistemaFacturacion&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -61,8 +95,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
       </set>
     </attachedChunks>
   </component>
