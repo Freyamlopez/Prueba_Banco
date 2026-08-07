@@ -20,8 +20,6 @@ export default function LoginForm({ correo, password, onCorreoChange, onPassword
 
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-5xl grid md:grid-cols-2">
 
-
-
             <div className="hidden md:flex flex-col items-center justify-center  to-blue-50 text-mauve-800 p-10">
 
                 <img  
@@ -42,7 +40,7 @@ export default function LoginForm({ correo, password, onCorreoChange, onPassword
 
             </div>
 
-            {/* PANEL DERECHO */}
+
 
             <div className="p-12">
 
