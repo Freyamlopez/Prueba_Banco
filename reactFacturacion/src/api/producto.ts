@@ -1,8 +1,7 @@
 import type { Producto } from "../interface/producto";
 
 
-const URL = "http://localhost:8080/producto";
-
+const URL = "http://localhost:8020/producto";
 
 
 function getAuthToken(token?: string): string | null {
