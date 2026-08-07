@@ -11,12 +11,12 @@ import prueba.sistemaFacturacion.persistence.repository.UsuarioRepository;
 public class UsuarioService{
 
     private final UsuarioRepository usuarioRepository;
-    
-    @Autowired
+
+
     public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
-    
+
     public Usuario findByCorreo(String correo) {
         return usuarioRepository.findByCorreo(correo)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));

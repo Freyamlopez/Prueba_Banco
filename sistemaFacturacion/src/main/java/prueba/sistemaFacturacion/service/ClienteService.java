@@ -26,5 +26,4 @@ public class ClienteService {
     public Cliente getAllClientByIdentificacion(String identificacion){
         return this.clienteRepository.findByIdentificacion(identificacion).orElse(null);
     }
-    
 }

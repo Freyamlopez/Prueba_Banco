@@ -84,6 +84,16 @@ public class GlobalExceptionHandler {
         );
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
+
+    @ExceptionHandler(RecursoDuplicadoException.class)
+    public ResponseEntity<ErrorResponseDTO> handleRecursoDuplicado(RecursoDuplicadoException ex) {
+        ErrorResponseDTO body = new ErrorResponseDTO(
+                HttpStatus.CONFLICT.value(),
+                "Recurso duplicado",
+                ex.getMessage()
+        );
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(body);
+    }
 }
 
 

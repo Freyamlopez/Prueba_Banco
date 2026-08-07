@@ -3,9 +3,12 @@ package prueba.sistemaFacturacion.persistence.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Builder
 @Entity
 @Table(name = "cliente")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class Cliente {
     
@@ -25,5 +28,4 @@ public class Cliente {
 
     @Column(name = "direccion")
     private String direccion;
-
 }

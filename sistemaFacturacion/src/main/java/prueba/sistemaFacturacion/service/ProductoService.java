@@ -14,22 +14,17 @@ public class ProductoService {
     private final ProductoRepository productoRepository;
     private final ProductoMapper productoMapper;
 
-
     public ProductoService(ProductoRepository productoRepository, ProductoMapper productoMapper) {
         this.productoRepository = productoRepository;
         this.productoMapper = productoMapper;
     }
 
-
     public List<Producto> getAlll() {
         return this.productoRepository.findAll();
     }
-
-
 
     public Producto saveProduct(ProductoRequest dto) {
         Producto producto = productoMapper.toProducto(dto);
         return productoRepository.save(producto);
     }
-
 }
