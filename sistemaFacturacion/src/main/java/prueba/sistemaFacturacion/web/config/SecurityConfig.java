@@ -17,7 +17,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 public class SecurityConfig {
-
     private final JwtFilter jwtFilter;
 
     public SecurityConfig(JwtFilter jwtFilter) {
@@ -59,19 +58,6 @@ public class SecurityConfig {
             return configuration.getAuthenticationManager();
         }
 
-
-          /* // SI NO FUNCIONA SOLO USEN ESTO COMENTADO :D y BORREN LO DEMAS JAJJJA
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
-        http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll()
-                );
-
-        return http.build();
-    }*/
 
 }
 
