@@ -6,7 +6,7 @@ import prueba.sistemaFacturacion.persistence.entity.Rol;
 
 @Data
 public class UsuarioRequest {
-    
+
     private String nombre;
     private String correo;
     private String contrasena;
