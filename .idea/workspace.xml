@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e7b1c6-b6fc-41b2-8ebe-b88f44ab13f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/entity/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/entity/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/request/ClienteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/DTO/request/ClienteRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/ClienteController.java" afterDir="false" />
-    </list>
+    <list default="true" id="51e7b1c6-b6fc-41b2-8ebe-b88f44ab13f6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
