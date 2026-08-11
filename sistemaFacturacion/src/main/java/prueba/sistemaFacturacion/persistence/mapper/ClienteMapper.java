@@ -42,7 +42,6 @@ public class ClienteMapper {
         return ClienteResponse.builder()
                 .id(cliente.getId())
                 .nombre(cliente.getUsuario() != null ? cliente.getUsuario().getNombre() : null)
-                .correo(cliente.getUsuario() != null ? cliente.getUsuario().getCorreo() : null)
                 .identificacion(cliente.getIdentificacion())
                 .telefono(cliente.getTelefono())
                 .direccion(cliente.getDireccion())

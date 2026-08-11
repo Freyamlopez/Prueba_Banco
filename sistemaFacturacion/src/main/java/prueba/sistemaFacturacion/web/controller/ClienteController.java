@@ -9,6 +9,7 @@ import prueba.sistemaFacturacion.persistence.entity.Cliente;
 import prueba.sistemaFacturacion.service.ClienteService;
 import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
 import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
+import prueba.sistemaFacturacion.service.DTO.response.ClienteResponse;
 
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> saveClient(@Valid @RequestBody ClienteRequest clienteRequest) {
+    public ResponseEntity<ClienteResponse> saveClient(@Valid @RequestBody ClienteRequest clienteRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.saveClient(clienteRequest));
     }
 

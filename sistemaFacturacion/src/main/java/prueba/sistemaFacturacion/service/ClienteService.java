@@ -2,10 +2,16 @@ package prueba.sistemaFacturacion.service;
 
 import org.springframework.stereotype.Service;
 import prueba.sistemaFacturacion.persistence.entity.Cliente;
+import prueba.sistemaFacturacion.persistence.entity.Usuario;
 import prueba.sistemaFacturacion.persistence.mapper.ClienteMapper;
 import prueba.sistemaFacturacion.persistence.repository.ClienteRepository;
+import prueba.sistemaFacturacion.persistence.repository.UsuarioRepository;
 import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
-import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
+import prueba.sistemaFacturacion.service.DTO.response.ClienteResponse;
+import prueba.sistemaFacturacion.web.excepcion.RecursoDuplicadoException;
+import prueba.sistemaFacturacion.web.excepcion.ResourceNotFoundException;
+
+import java.util.List;
 
 @Service
 public class ClienteService {
@@ -26,6 +32,10 @@ public class ClienteService {
                 .stream()
                 .map(clienteMapper::toResponse)
                 .toList();
+    }
+
+    public Cliente getAllClientByIdentificacion(String identificacion){
+        return this.clienteRepository.findByIdentificacion(identificacion).orElse(null);
     }
 
     public ClienteResponse getByIdentificacion(String identificacion) {
@@ -82,7 +92,5 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
-    public Cliente getAllClientByIdentificacion(String identificacion){
-        return this.clienteRepository.findByIdentificacion(identificacion).orElse(null);
-    }*/
+    */
 }
