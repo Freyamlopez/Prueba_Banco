@@ -6,7 +6,7 @@ import prueba.sistemaFacturacion.service.DTO.request.ProductoRequest;
 
 @Component
 public class ProductoMapper {
-    Producto producto = new Producto();
+    //Producto producto = new Producto();
 
     public Producto toProducto(ProductoRequest productoRequest) {
         if (productoRequest == null) {
@@ -22,4 +22,16 @@ public class ProductoMapper {
 
             return producto;
         }
+
+
+    public void updateProducto(
+            Producto producto,
+            ProductoRequest productoRequest) {
+
+        producto.setNombre(productoRequest.getNombre());
+        producto.setDescripcion(productoRequest.getDescripcion());
+        producto.setPrecioUnitario(productoRequest.getPrecioUnitario());
+        producto.setStock(productoRequest.getStock());
+        producto.setActivo(productoRequest.getActivo());
+    }
 }

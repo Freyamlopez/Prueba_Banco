@@ -5,6 +5,7 @@ import prueba.sistemaFacturacion.persistence.entity.Producto;
 import prueba.sistemaFacturacion.persistence.mapper.ProductoMapper;
 import prueba.sistemaFacturacion.persistence.repository.ProductoRepository;
 import prueba.sistemaFacturacion.service.DTO.request.ProductoRequest;
+import prueba.sistemaFacturacion.web.excepcion.ResourceNotFoundException;
 
 import java.util.List;
 
@@ -27,4 +28,24 @@ public class ProductoService {
         Producto producto = productoMapper.toProducto(dto);
         return productoRepository.save(producto);
     }
+
+
+    public Producto updateProduct(Long id, ProductoRequest dto) {
+        Producto producto = productoRepository.findById(id).orElseThrow
+                (() -> new ResourceNotFoundException("Producto no encontrado con id: " + id));
+
+        productoMapper.updateProducto(producto, dto);
+        return productoRepository.save(producto);
+    }
+
+
+    public Producto changeStatus(Long id, Boolean activo) {
+        Producto producto = productoRepository.findById(id).orElseThrow
+                (() -> new RuntimeException("Producto no encontrado con id: " + id));
+
+        producto.setActivo(activo);
+        return productoRepository.save(producto);
+    }
+
+
 }

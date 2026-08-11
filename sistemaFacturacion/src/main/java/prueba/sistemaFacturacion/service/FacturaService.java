@@ -155,4 +155,19 @@ public class FacturaService   {
         return "FAC-" + String.format("%06d", siguiente);
     }
 
+
+    // FACTIURA DE CLEINTE
+    public Page<FacturaResponseDTO> obtenerMisFacturas(String correo, Pageable pageable) {
+
+        Cliente cliente = clienteRepository.findByUsuarioCorreo(correo)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "No existe un cliente asociado al usuario: " + correo));
+
+        return facturaRepository.findByClienteId(cliente.getId(), pageable)
+                .map(facturaMapper::toResponseDTO);
+    }
+
+
+
+
 }

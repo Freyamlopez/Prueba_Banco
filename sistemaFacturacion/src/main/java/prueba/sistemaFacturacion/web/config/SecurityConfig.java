@@ -47,10 +47,12 @@ public class SecurityConfig {
                                 "/swagger-ui.html"
                         ).permitAll()
                         .requestMatchers(HttpMethod.POST, "/productos/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/productos/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/clientes/**").hasAnyRole("ADMIN", "CAJERO")
                         .requestMatchers(HttpMethod.POST, "/facturas").hasRole("CAJERO")
                         .requestMatchers(HttpMethod.PUT, "/facturas/*/pagar").hasRole("CAJERO")
                         .requestMatchers(HttpMethod.PUT, "/facturas/*/anular").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/facturas/mis-facturas").hasRole("CLIENTE")
                         .requestMatchers(HttpMethod.GET, "/facturas/cliente/**").hasAnyRole("ADMIN", "CAJERO", "CLIENTE")
                         .requestMatchers(HttpMethod.GET, "/facturas/cajero/**").hasAnyRole("ADMIN", "CAJERO")
 

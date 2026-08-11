@@ -34,4 +34,16 @@ public class ProductoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(productoService.saveProduct(dto));
     }
 
+
+    @PutMapping ("/{id}")
+    public ResponseEntity<Producto> updateProduct (@PathVariable Long id, @Valid @RequestBody ProductoRequest dto) {
+        return ResponseEntity.ok(productoService.updateProduct(id, dto));
+    }
+
+
+    @PutMapping ("/{id}/estado")
+    public ResponseEntity<Producto> changeStatus (@PathVariable Long id, @RequestParam Boolean activo) {
+        return ResponseEntity.ok(productoService.changeStatus(id, activo));
+    }
+
 }

@@ -85,5 +85,23 @@ public class FacturaController {
         FacturaResponseDTO response = facturaService.registrarPago(id);
         return ResponseEntity.ok(response);
     }
+
+
+    @GetMapping("/mis-facturas")
+    @PreAuthorize("hasRole('CLIENTE')")
+    @Operation(summary = "Obtener mis facturas")
+    @ApiResponse(responseCode = "200", description = "Facturas del cliente autenticado")
+    @ApiResponse(responseCode = "404", description = "Cliente no encontrado")
+    public ResponseEntity<Page<FacturaResponseDTO>> obtenerMisFacturas(
+            Authentication authentication,
+            Pageable pageable) {
+
+        String correo = authentication.getName();
+
+        Page<FacturaResponseDTO> response =
+                facturaService.obtenerMisFacturas(correo, pageable);
+
+        return ResponseEntity.ok(response);
+    }
 }
 
