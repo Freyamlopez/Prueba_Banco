@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+msg_file="$1"
+case "$msg_file" in
+  /*) ;;
+  *) msg_file="$(pwd)/$msg_file" ;;
+esac
+cd front/reactFacturacion || exit 1
+npx --no -- commitlint --edit "$msg_file"
