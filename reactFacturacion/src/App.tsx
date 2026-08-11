@@ -5,9 +5,10 @@ import LoginPage from "./page/LoginPage";
 import DashboardLayout from "./components/DashboardLayout";
 import DashboardPage from "./page/DashboardPage";
 import ClientePage from "./page/ClientePage";
-import ProductoPage from "./page/ProductoPage";
+import ProductoPage from "./page/producto/ProductoPage";
 import FacturaPage from "./page/FacturaPage";
 import UsuarioPage from "./page/UsuarioPage";
+import FacturasClientePage from "./page/factura/FacturasCliente";
 
 function App() {
 
@@ -26,6 +27,11 @@ function App() {
           <Route path="/facturas" element={<FacturaPage />} />
           <Route path="/usuarios" element={<UsuarioPage />} />
         </Route>
+
+        <Route
+             path="/mis-facturas"
+              element={<FacturasClientePage />}
+         />
 
       </Routes>
 

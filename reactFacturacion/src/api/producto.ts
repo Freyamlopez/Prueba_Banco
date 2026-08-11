@@ -1,42 +1,91 @@
-import type { Producto } from "../interface/producto";
+import type { Producto, ProductoRequest } from "../interface/producto";
+
+const URL = "http://localhost:8080/productos";
 
 
-const URL = "http://localhost:8080/producto";
 
+function getHeaders() {
+    const token = localStorage.getItem("token");
 
+    console.log("TOKEN:", token);
 
-function getAuthToken(token?: string): string | null {
-    if (token) {
-        return token.startsWith("Bearer ") ? token : `Bearer ${token}`;
-    }
-
-    const storedToken = localStorage.getItem("token");
-
-    if (!storedToken) {
-        return null;
-    }
-
-    return storedToken.startsWith("Bearer ") ? storedToken : `Bearer ${storedToken}`;
+    return {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+    };
 }
 
 
 
-export async function getOrdenes(token?: string): Promise<Producto[]> {
+export async function getProductos(): Promise<Producto[]> {
 
-    const authToken = getAuthToken(token);
-    const headers = new Headers();
-
-    if (authToken) {
-        headers.set("Authorization", authToken);
-    }
-
-    const response = await fetch(URL, { headers });
+    const response = await fetch(URL, {
+        method: "GET",
+        headers: getHeaders()
+    });
 
     if (!response.ok) {
-        const message = await response.text().catch(() => "");
-        throw new Error(message || "Error al listar órdenes");
+        throw new Error("Error al obtener los productos");
     }
 
     return await response.json();
 }
 
+
+
+export async function createProducto(producto: ProductoRequest): Promise<Producto> {
+
+    const response = await fetch(URL, {
+        method: "POST",
+        headers: getHeaders(),
+        body: JSON.stringify(producto)
+    });
+
+    if (!response.ok) {
+        throw new Error("Error al crear el producto");
+    }
+
+    return await response.json();
+}
+
+
+
+
+export async function updateProducto(id: number, producto: ProductoRequest): Promise<Producto> {
+
+    const response = await fetch(`${URL}/${id}`, {
+        method: "PUT",
+        headers: getHeaders(),
+        body: JSON.stringify(producto)
+    });
+
+    if (!response.ok) {
+        throw new Error("Error al actualizar el producto");
+    }
+
+    return await response.json();
+}
+
+
+
+
+export async function changeProductoStatus(
+    id: number,
+    activo: boolean
+): Promise<Producto> {
+
+    const response = await fetch(
+        `${URL}/${id}/estado?activo=${activo}`,
+        {
+            method: "PUT",
+            headers: getHeaders()
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error("Error al cambiar el estado del producto");
+    }
+
+    return await response.json();
+}
+    

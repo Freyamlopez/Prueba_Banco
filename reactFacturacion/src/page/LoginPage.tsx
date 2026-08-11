@@ -11,20 +11,28 @@ export default function LoginPage() {
     const navigate = useNavigate();
 
 
+ 
     const handleSubmit = async (e: React.FormEvent) => {
 
         e.preventDefault();
+
         try {
-            const token = await login(correo, password);
-            console.log(token);
-
+            const data = await login(correo, password);
+          //  console.log("LOGIN:", data);
             toast.success("¡Inicio de sesión exitoso!");
-            navigate("/dashboard");
-        } catch (error) {
 
-            toast.error("Correo o contraseña incorrectos.");
+            if (data.rol === "ROLE_CLIENTE") {
+                navigate("/mis-facturas");
+            } else {
+                navigate("/dashboard");
+            }
+
+        } catch (error) {
+          //  console.error(error);
+            toast.error("Correo o contraseña incorrectos");
         }
     };
+
 
 
 
