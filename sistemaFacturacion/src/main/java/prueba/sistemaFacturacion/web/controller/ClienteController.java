@@ -20,6 +20,16 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
+    @GetMapping
+    public ResponseEntity<List<ClienteResponse>> getAll() {
+        return ResponseEntity.ok(clienteService.getAll());
+    }
+
+    @GetMapping("/{identificacion}")
+    public ResponseEntity<ClienteResponse> getClientByIdentificacion(@PathVariable String identificacion) {
+        return ResponseEntity.ok(clienteService.getByIdentificacion(identificacion));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> getClientById(@PathVariable String id) {
         Cliente cliente = clienteService.getAllClientByIdentificacion(id);
@@ -29,5 +39,16 @@ public class ClienteController {
     @PostMapping
     public ResponseEntity<Cliente> saveClient(@Valid @RequestBody ClienteRequest cliente) {
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.saveClient(cliente));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ClienteResponse> updateClient(@PathVariable Long id, @Valid @RequestBody ClienteRequest clienteRequest) {
+        return ResponseEntity.ok(clienteService.updateClient(id, clienteRequest));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteClient(@PathVariable Long id) {
+        clienteService.deleteClient(id);
+        return ResponseEntity.noContent().build();
     }
 }

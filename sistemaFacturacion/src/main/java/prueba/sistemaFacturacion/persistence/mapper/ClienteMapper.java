@@ -26,4 +26,26 @@ public class ClienteMapper {
         return cliente;
     }
 
+    public void actualizarDesdeRequest(Cliente cliente, ClienteRequest clienteRequest) {
+
+        cliente.setTelefono(clienteRequest.getTelefono());
+        cliente.setDireccion(clienteRequest.getDireccion());
+        
+    }
+
+    public ClienteResponse toResponse(Cliente cliente) {
+
+        if (cliente == null) {
+            return null;
+        }
+
+        return ClienteResponse.builder()
+                .id(cliente.getId())
+                .nombre(cliente.getUsuario() != null ? cliente.getUsuario().getNombre() : null)
+                .correo(cliente.getUsuario() != null ? cliente.getUsuario().getCorreo() : null)
+                .identificacion(cliente.getIdentificacion())
+                .telefono(cliente.getTelefono())
+                .direccion(cliente.getDireccion())
+                .build();
+    }
 }
