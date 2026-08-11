@@ -1,11 +1,13 @@
 package prueba.sistemaFacturacion.web.controller;
 
 import jakarta.validation.Valid;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import prueba.sistemaFacturacion.persistence.entity.Cliente;
 import prueba.sistemaFacturacion.service.ClienteService;
+import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
 import prueba.sistemaFacturacion.service.DTO.request.ClienteRequest;
 
 import java.util.List;
@@ -37,8 +39,8 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> saveClient(@Valid @RequestBody ClienteRequest cliente) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.saveClient(cliente));
+    public ResponseEntity<Cliente> saveClient(@Valid @RequestBody ClienteRequest clienteRequest) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.saveClient(clienteRequest));
     }
 
     @PutMapping("/{id}")
