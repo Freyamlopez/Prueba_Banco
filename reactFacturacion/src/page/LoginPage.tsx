@@ -28,7 +28,7 @@ export default function LoginPage() {
             }
 
         } catch (error) {
-          //  console.error(error);
+            console.error(error);
             toast.error("Correo o contraseña incorrectos");
         }
     };
