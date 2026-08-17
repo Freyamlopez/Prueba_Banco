@@ -6,14 +6,18 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import prueba.sistemaFacturacion.persistence.entity.EstadoFactura;
 import prueba.sistemaFacturacion.service.DTO.request.FacturaRequestDTO;
 import prueba.sistemaFacturacion.service.DTO.response.FacturaResponseDTO;
 import prueba.sistemaFacturacion.service.FacturaService;
+
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/facturas")
@@ -35,6 +39,19 @@ public class FacturaController {
 
         FacturaResponseDTO response = facturaService.crearFactura(request, emailCajero);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @GetMapping
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Page<FacturaResponseDTO>> obtenerTodas(
+            @RequestParam(required = false) EstadoFactura estado,
+            @RequestParam(required = false) String numeroFactura,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaInicio,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaFin,
+            Pageable pageable) {
+
+        Page<FacturaResponseDTO> response = facturaService.obtenerTodas(estado, numeroFactura, fechaInicio, fechaFin, pageable);
+        return ResponseEntity.ok(response);
     }
 
     @Operation(summary = "Obtener facturas por cliente")
@@ -85,5 +102,35 @@ public class FacturaController {
         FacturaResponseDTO response = facturaService.registrarPago(id);
         return ResponseEntity.ok(response);
     }
-}
+
+    @GetMapping("/mis-facturas")
+    @PreAuthorize("hasRole('CAJERO')")
+    public ResponseEntity<Page<FacturaResponseDTO>> obtenerMisFacturas(Authentication authentication, Pageable pageable) {
+        String emailCajero = authentication.getName();
+        Page<FacturaResponseDTO> response = facturaService.obtenerMisFacturas(emailCajero, pageable);
+        return ResponseEntity.ok(response);
+    }
+
+
+    @GetMapping("/cliente-facturas")
+    @PreAuthorize("hasRole('CLIENTE')")
+    @Operation(summary = "Obtener  facturas Cliente")
+    @ApiResponse(responseCode = "200", description = "Facturas del cliente autenticado")
+    @ApiResponse(responseCode = "404", description = "Cliente no encontrado")
+    public ResponseEntity<Page<FacturaResponseDTO>> obtenerFacturasCliente(
+            Authentication authentication,
+            Pageable pageable) {
+
+        String correo = authentication.getName();
+
+        try {
+            Page<FacturaResponseDTO> response =
+                    facturaService.obtenerFacturasCliente(correo, pageable);
+
+            return ResponseEntity.ok(response);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw ex;
+        }
+    }}
 

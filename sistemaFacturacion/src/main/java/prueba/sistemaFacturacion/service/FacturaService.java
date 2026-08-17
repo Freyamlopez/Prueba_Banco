@@ -4,13 +4,11 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import prueba.sistemaFacturacion.persistence.entity.*;
 import prueba.sistemaFacturacion.persistence.mapper.FacturaMapper;
-import prueba.sistemaFacturacion.persistence.repository.ClienteRepository;
-import prueba.sistemaFacturacion.persistence.repository.FacturaRepository;
-import prueba.sistemaFacturacion.persistence.repository.ProductoRepository;
-import prueba.sistemaFacturacion.persistence.repository.UsuarioRepository;
+import prueba.sistemaFacturacion.persistence.repository.*;
 import prueba.sistemaFacturacion.service.DTO.request.DetalleFacturaRequestDTO;
 import prueba.sistemaFacturacion.service.DTO.request.FacturaRequestDTO;
 import prueba.sistemaFacturacion.service.DTO.response.FacturaResponseDTO;
@@ -154,5 +152,41 @@ public class FacturaService   {
         long siguiente = facturaRepository.count() + 1;
         return "FAC-" + String.format("%06d", siguiente);
     }
+
+    public Page<FacturaResponseDTO> obtenerTodas(
+            EstadoFactura estado,
+            String numeroFactura,
+            LocalDate fechaInicio,
+            LocalDate fechaFin,
+            Pageable pageable) {
+
+        Specification<Factura> spec = Specification
+                .where(FacturaSpecification.conEstado(estado))
+                .and(FacturaSpecification.conNumeroFactura(numeroFactura))
+                .and(FacturaSpecification.conRangoFechas(fechaInicio, fechaFin));
+
+        return facturaRepository.findAll(spec, pageable)
+                .map(facturaMapper::toResponseDTO);
+    }
+
+    public Page<FacturaResponseDTO> obtenerMisFacturas(String emailCajero, Pageable pageable) {
+        Usuario cajero = usuarioRepository.findByCorreo(emailCajero)
+                .orElseThrow(() -> new ResourceNotFoundException("Cajero no encontrado"));
+
+        return facturaRepository.findByCajeroId(cajero.getId(), pageable)
+                .map(facturaMapper::toResponseDTO);
+    }
+
+    // FACTIURA DE CLEINTE
+    @Transactional
+    public Page<FacturaResponseDTO> obtenerFacturasCliente(String correo, Pageable pageable) {
+        Cliente cliente = clienteRepository.findByUsuarioCorreo(correo)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "No existe un cliente asociado al usuario: " + correo));
+
+        return facturaRepository.findByClienteId(cliente.getId(), pageable)
+                .map(facturaMapper::toResponseDTO);
+    }
+
 
 }

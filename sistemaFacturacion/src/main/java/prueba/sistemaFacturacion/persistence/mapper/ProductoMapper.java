@@ -22,4 +22,15 @@ public class ProductoMapper {
 
             return producto;
         }
+
+    public void updateProducto(
+            Producto producto,
+            ProductoRequest productoRequest) {
+
+        producto.setNombre(productoRequest.getNombre());
+        producto.setDescripcion(productoRequest.getDescripcion());
+        producto.setPrecioUnitario(productoRequest.getPrecioUnitario());
+        producto.setStock(productoRequest.getStock());
+        producto.setActivo(productoRequest.getActivo());
+    }
 }

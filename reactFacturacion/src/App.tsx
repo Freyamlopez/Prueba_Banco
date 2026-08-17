@@ -1,50 +1,33 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
-import LoginPage from "./page/LoginPage";
-import DashboardLayout from "./components/DashboardLayout";
-import DashboardPage from "./page/DashboardPage";
-import ClientePage from "./page/ClientePage";
-import ProductoPage from "./page/ProductoPage";
-import FacturaPage from "./page/FacturaPage";
-import UsuarioPage from "./page/UsuarioPage";
+import "react-toastify/dist/ReactToastify.css";
+import LoginPage from "./page/auth/LoginPage";
+import DashboardLayout from "./components/layout/DashboardLayout.tsx";
+import DashboardPage from "./page/dashboard/DashboardPage.tsx";
+import ClientePage from "./page/clientes/ClientePage.tsx";
+import ProductoPage from "./page/productos/ProductoPage.tsx";
+import UsuarioPage from "./page/usuarios/UsuarioPage.tsx";
+import FacturaPage from "./page/facturas/FacturaPage.tsx";
+import FacturasClientePage from "./page/facturas/FacturaClientePage.tsx";
 
 function App() {
-
   return (
     <BrowserRouter>
-
       <Routes>
-
-        {/* Ruta inicial */}
-        <Route path="/" element={<Navigate to="/login" replace />} />
-
-
-        {/* Login sin Layout */}
+        <Route path="/" element={<Navigate to="/login" replace />} /> {/* nuevo */}
         <Route path="/login" element={<LoginPage />} />
 
-
-        {/* Rutas privadas con Layout */}
         <Route element={<DashboardLayout />}>
-
           <Route path="/dashboard" element={<DashboardPage />} />
-
           <Route path="/clientes" element={<ClientePage />} />
-
           <Route path="/productos" element={<ProductoPage />} />
-
           <Route path="/facturas" element={<FacturaPage />} />
-
           <Route path="/usuarios" element={<UsuarioPage />} />
-
+          <Route path="/productos" element={<ProductoPage />} />
+        
         </Route>
-
-
-        {/* Ruta desconocida */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
-
+        <Route path="/cliente-facturas"element={<FacturasClientePage />}/>
       </Routes>
-
 
       <ToastContainer
         position="top-right"
@@ -55,7 +38,6 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-
     </BrowserRouter>
   );
 }

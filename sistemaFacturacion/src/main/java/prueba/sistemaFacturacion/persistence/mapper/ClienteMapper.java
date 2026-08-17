@@ -21,8 +21,7 @@ public class ClienteMapper {
         cliente.setIdentificacion(clienteRequest.getIdentificacion());
         cliente.setTelefono(clienteRequest.getTelefono());
         cliente.setDireccion(clienteRequest.getDireccion());
-        // El usuario es opcional según el documento.
-        // Por ahora no lo asignamos.
+        // El usuario es opcional según el documento
         return cliente;
     }
 

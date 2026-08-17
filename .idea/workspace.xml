@@ -5,7 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51e7b1c6-b6fc-41b2-8ebe-b88f44ab13f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/repository/FacturaSpecification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/api/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/api/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/api/producto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/api/producto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/DashboardLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/components/layout/DashboardLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/Sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/common/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/api/clientes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/common/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/api/facturas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/common/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/api/http.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/common/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/components/common/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/common/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/components/common/NuevaFacturaModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/components/common/NuevoClienteModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/layout/Layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/interface/cliente.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/components/layout/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/components/layout/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/interface/producto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/interface/producto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/interfaces/Cliente.ts" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/interface/factura.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/interfaces/Factura.ts" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/clientes/ClientePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/interfaces/Producto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/dashboard/DashboardPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/interfaces/Usuario.ts" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/facturas/FacturaAdminView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/page/ClientePage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/page/DashboardPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/page/FacturaPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/page/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/auth/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/page/ProductoPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/page/UsuarioPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/facturas/FacturaCajeroView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/auth/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/auth/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/clientes/Clientes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/facturas/FacturaPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/clientes/CrearCliente.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/productos/ProductoPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactFacturacion/src/page/usuarios/UsuarioPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/facturas/CrearFactura.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/facturas/DetalleFactura.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/facturas/Facturas.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/productos/CrearProducto.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/productos/EditarProducto.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/productos/Productos.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactFacturacion/src/pages/usuarios/Usuarios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/mapper/ClienteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/mapper/ClienteMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/mapper/ProductoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/mapper/ProductoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/repository/ClienteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/repository/FacturaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/persistence/repository/FacturaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/FacturaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/FacturaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/service/ProductoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/FacturaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/FacturaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/controller/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/excepcion/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/java/prueba/sistemaFacturacion/web/excepcion/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaFacturacion/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaFacturacion/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +91,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
         <option value="Exception" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -76,6 +130,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="prueba.sistemaFacturacion.web.config" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\walvarez\Documents\Prueba_Banco\reactFacturacion\src\components\layout" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -96,5 +153,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

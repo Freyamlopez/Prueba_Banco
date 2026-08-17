@@ -46,14 +46,27 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/swagger-ui.html"
                         ).permitAll()
+                        // --- Productos ---
                         .requestMatchers(HttpMethod.POST, "/productos/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/productos/**").hasRole("ADMIN")
+
+                        // --- Clientes ---
                         .requestMatchers(HttpMethod.POST, "/clientes/**").hasAnyRole("ADMIN", "CAJERO")
-                        .requestMatchers(HttpMethod.POST, "/facturas").hasRole("CAJERO")
-                        .requestMatchers(HttpMethod.PUT, "/facturas/*/pagar").hasRole("CAJERO")
-                        .requestMatchers(HttpMethod.PUT, "/facturas/*/anular").hasRole("ADMIN")
+
+                        // --- Facturas: creación y cambios de estado ---
+                        .requestMatchers(HttpMethod.POST, "/facturas").hasRole("CAJERO")           // emitir factura: solo CAJERO
+                        .requestMatchers(HttpMethod.PUT, "/facturas/*/pagar").hasRole("CAJERO")     // registrar pago: solo CAJERO
+                        .requestMatchers(HttpMethod.PUT, "/facturas/*/anular").hasRole("ADMIN")     // anular factura: solo ADMIN
+
+                        // --- Facturas: consultas ---
+                        .requestMatchers(HttpMethod.GET, "/facturas").hasRole("ADMIN")              // historial completo: solo ADMIN (nuevo)
                         .requestMatchers(HttpMethod.GET, "/facturas/cliente/**").hasAnyRole("ADMIN", "CAJERO", "CLIENTE")
                         .requestMatchers(HttpMethod.GET, "/facturas/cajero/**").hasAnyRole("ADMIN", "CAJERO")
+                        .requestMatchers(HttpMethod.GET, "/facturas/mis-facturas").hasAnyRole( "CAJERO")
+                        .requestMatchers(HttpMethod.GET, "/facturas/cliente-facturas").hasRole("CLIENTE")
 
+
+                        // Cualquier otro endpoint no listado arriba: solo requiere estar autenticado (cualquier rol)
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

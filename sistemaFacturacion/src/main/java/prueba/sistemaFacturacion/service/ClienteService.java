@@ -1,5 +1,7 @@
 package prueba.sistemaFacturacion.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import prueba.sistemaFacturacion.persistence.entity.Cliente;
 import prueba.sistemaFacturacion.persistence.mapper.ClienteMapper;
@@ -24,5 +26,9 @@ public class ClienteService {
 
     public Cliente getAllClientByIdentificacion(String identificacion){
         return this.clienteRepository.findByIdentificacion(identificacion).orElse(null);
+    }
+
+    public Page<Cliente> getAllClients(Pageable pageable) {
+        return clienteRepository.findAll(pageable);
     }
 }
