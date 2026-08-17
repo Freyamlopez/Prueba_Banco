@@ -38,8 +38,8 @@ public class ClienteService {
         return this.clienteRepository.findByIdentificacion(identificacion).orElse(null);
     }
 
-    public ClienteResponse getByIdentificacion(String identificacion) {
-        Cliente cliente = clienteRepository.findByIdentificacion(identificacion)
+    public ClienteResponse getByIdentificacion(String id) {
+        Cliente cliente = clienteRepository.findByIdentificacion(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Cliente no encontrado con identificación " + identificacion));
 
         return clienteMapper.toResponse(cliente);
